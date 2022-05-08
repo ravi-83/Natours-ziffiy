@@ -28,27 +28,27 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Set security HTTP Headers
-app.use(helmet({ crossOriginEmbedderPolicy: false }));
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'", 'http://127.0.0.1:3000/*'],
-      baseUri: ["'self'"],
-      fontSrc: ["'self'", 'https:', 'data:'],
-      scriptSrc: ["'self'", 'https://*.cloudflare.com'],
-      scriptSrc: [
-        "'self'",
-        'https://*.stripe.com',
-        'https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js',
-      ],
-      connectSrc: ["'self'", 'http://127.0.0.1:3000/*'],
-      frameSrc: ["'self'", 'https://*.stripe.com'],
-      objectSrc: ["'none'"],
-      'style-src': ["'self'", 'https:', "'unsafe-inline'"],
-      upgradeInsecureRequests: [],
-    },
-  })
-);
+// app.use(helmet({ crossOriginEmbedderPolicy: false }));
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'", 'http://127.0.0.1:3000/*'],
+//       baseUri: ["'self'"],
+//       fontSrc: ["'self'", 'https:', 'data:'],
+//       scriptSrc: ["'self'", 'https://*.cloudflare.com'],
+//       scriptSrc: [
+//         "'self'",
+//         'https://*.stripe.com',
+//         'https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js',
+//       ],
+//       connectSrc: ["'self'", 'http://127.0.0.1:3000/*'],
+//       frameSrc: ["'self'", 'https://*.stripe.com'],
+//       objectSrc: ["'none'"],
+//       'style-src': ["'self'", 'https:', "'unsafe-inline'"],
+//       upgradeInsecureRequests: [],
+//     },
+//   })
+// );
 
 // Perventing params Polution
 app.use(
