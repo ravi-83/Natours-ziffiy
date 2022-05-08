@@ -23,16 +23,10 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   // 2) Build Template
 
   // 3) Render that remplate usinf tour data from 1
-  res
-    .status(200)
-    .set(
-      'Content-Security-Policy',
-      "connect-src 'self' http://127.0.0.1:3000/*"
-    )
-    .render('overview', {
-      title: 'All Tours',
-      tours: tours,
-    });
+  res.status(200).render('overview', {
+    title: 'All Tours',
+    tours: tours,
+  });
 });
 
 exports.getTour = catchAsync(async (req, res, next) => {
