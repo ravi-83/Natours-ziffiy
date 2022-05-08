@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const csp = require('express-csp');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -91,6 +92,8 @@ app.use(xss());
 //   console.log('Hello from the middleware💥');
 //   next();
 // });
+
+app.use(compression());
 
 // Test middleware for testing purpose only
 app.use((req, res, next) => {

@@ -12,7 +12,7 @@ export const login = async (email, password) => {
       },
     });
 
-    console.log(res);
+    //console.log(res);
     if (res.data.status === 'success') {
       showAlert('success', 'Logged in successfully');
     }
@@ -21,7 +21,7 @@ export const login = async (email, password) => {
       location.assign('/');
     }, 1500);
   } catch (err) {
-    console.log(err);
+    //console.log(err);
     showAlert('error', err.response.data.message);
   }
 };

@@ -65,7 +65,6 @@ if (userUpdatePassword) {
 
 if (bookBtn) {
   bookBtn.addEventListener('click', (e) => {
-    console.log('fjhehbfjefbjsfbsjdbvsjbv');
     const { tourId } = e.target.dataset;
     e.target.textContent = 'Processing...';
     bookTour(tourId);
